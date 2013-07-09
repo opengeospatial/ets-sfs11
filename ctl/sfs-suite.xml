@@ -7,17 +7,23 @@
   <ctl:suite name="tns:sfs-suite">
     <ctl:title>SFS 1.1 Conformance Test Suite</ctl:title>
     <ctl:description>Verifies conformance to "OpenGIS Simple Features Specification For SQL, 
-    Revision 1.1" (OGC 99-049). A testing guidance document is available (see OGC 98-046r2).</ctl:description>
+    Revision 1.1" (OGC 99-049). </ctl:description>
     <ctl:starting-test>tns:main</ctl:starting-test>
   </ctl:suite>
 
   <ctl:test name="tns:main">
     <ctl:assertion>The implementation satisfies all applicable test requirements.</ctl:assertion>
     <ctl:code>
+  
       <xsl:variable name="form-data">
         <ctl:form width="800" height="600">
           <div id="input-form" xmlns="http://www.w3.org/1999/xhtml">
+          
             <h2>SFS 1.1 Conformance Test Suite</h2>
+            <p>
+              Information about this test suite can be found <a href="../../../about/sfs/1.1/web/" target="_blank">here</a>.</p>
+           
+            
             <fieldset style="background:#ccffff">
               <legend style="font-family: sans-serif; color: #000099; background-color:#F0F8FF; border-style: solid;
                 border-width: medium; padding:4px">Test logs</legend>
