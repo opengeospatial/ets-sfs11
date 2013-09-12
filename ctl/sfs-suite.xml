@@ -23,7 +23,7 @@
             <p>
               Information about this test suite can be found <a href="../../../about/sfs/1.1/web/" target="_blank">here</a>.</p>
            
-            
+        
             <fieldset style="background:#ccffff">
               <legend style="font-family: sans-serif; color: #000099; background-color:#F0F8FF; border-style: solid;
                 border-width: medium; padding:4px">Test logs</legend>
@@ -31,6 +31,9 @@
                 <label class="form-label" for="doc">
                   <h4 style="margin-bottom: 0.5em">Upload test logs (ZIP archive)</h4>
                 </label>
+                 <p>After submitting the logs the test will appeared as passed. The results will be further reviewed by the OGC staff, 
+                if you use these result to <a href="http://www.opengeospatial.org/resource/products/registration">apply for certification.</a></p>
+             
                 <input name="doc" size="96" type="file" />
               </p>
             </fieldset>
@@ -46,7 +49,7 @@
       <xsl:variable name="zip-size" select="zip:size(zip:new($file-path))" as="xs:integer" />
       <xsl:choose>
         <xsl:when test="$zip-size > 0">
-          <ctl:message>Test logs were received. You will be notified when the review is complete.</ctl:message>
+          <ctl:message>Test logs were received. You will be notified when the review is complete, if you are applying for certification.</ctl:message>
         </xsl:when>
         <xsl:otherwise>
           <ctl:message>Test logs were not received. Please submit a non-empty ZIP archive.</ctl:message>
