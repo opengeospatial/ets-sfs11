@@ -4,14 +4,14 @@
  xmlns:zip="java:java.util.zip.ZipFile"
  xmlns:tns="http://www.opengis.net/sfs">
 
-  <ctl:suite name="tns:sfs-suite">
+  <ctl:suite name="tns:sfs-1.1-suite">
     <ctl:title>SFS 1.1 Conformance Test Suite</ctl:title>
     <ctl:description>Verifies conformance to "OpenGIS Simple Features Specification For SQL, 
     Revision 1.1" (OGC 99-049). </ctl:description>
-    <ctl:starting-test>tns:main</ctl:starting-test>
+    <ctl:starting-test>tns:sfs-1.1-main</ctl:starting-test>
   </ctl:suite>
 
-  <ctl:test name="tns:main">
+  <ctl:test name="tns:sfs-1.1-main">
     <ctl:assertion>The implementation satisfies all applicable test requirements.</ctl:assertion>
     <ctl:code>
   
