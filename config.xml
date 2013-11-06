@@ -15,7 +15,7 @@
         Revision 1.1" (OGC 99-049). A testing guidance document is available (see OGC 98-046r2).</description>
       </suite>
       <revision>
-        <name>r3</name>
+        <name>r4</name>
         <sources>
           <source>sfs/1.1/ctl</source>
         </sources>
