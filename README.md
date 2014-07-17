@@ -2,6 +2,9 @@
 
 The OGC Simple Feature Access - SQL 1.1 Test-Suite provides the Executable Test Script (ETS) to test implementations against the following specification(s):
 
+  * [OGC-99-049] [OpenGIS Simple Features Specification For SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=829)
+  * [OGC-98-046r2] [Conformance Test Guidelines for OpenGIS Simple Features Specification for SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=7587)
+
 Detailed information about this test suite is available [here]( http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-sfs11/blob/master/src/main/web/index.html).
 
 ## License
