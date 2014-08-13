@@ -19,7 +19,7 @@
   <scm>
     <url>https://github.com/opengeospatial/ets-sfs11</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-sfs11.git</connection>
-    <developerConnection>scm:git:https://github.com/opengeospatial/ets-sfs11.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:opengeospatial/ets-sfs11.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
@@ -189,13 +189,6 @@
       </plugin>
     </plugins>
   </reporting>
-
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>http://myhome</url>
-    </site>
-  </distributionManagement>
 
   <dependencies>
     <dependency>
