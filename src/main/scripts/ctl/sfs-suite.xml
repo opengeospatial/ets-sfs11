@@ -21,9 +21,7 @@
           
             <h2>SFS 1.1 Conformance Test Suite</h2>
             <p>
-              Information about this test suite can be found <a href="../../../about/sfs/1.1/web/" target="_blank">here</a>.</p>
-           
-        
+              Information about this test suite can be found <a href="./" target="_blank">here</a>.</p>
             <fieldset style="background:#ccffff">
               <legend style="font-family: sans-serif; color: #000099; background-color:#F0F8FF; border-style: solid;
                 border-width: medium; padding:4px">Test logs</legend>
