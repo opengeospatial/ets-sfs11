@@ -23,19 +23,8 @@ conforming implementation.
   * [OGC-99-049] [OpenGIS Simple Features Specification For SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=829)
   * [OGC-98-046r2] [Conformance Test Guidelines for OpenGIS Simple Features Specification for SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=7587)
 
-## Release notes
-
-### r3 (2013-11-06)
-
-  * Changed local name of suite to 'sfs-1.1-suite'.
-
-### r2 (2013-09-12)
-
-  * Updated submission information.
-
-### r1 (2013-07-09)
-
-  * Initial release in TEAM Engine.
+## Release Notes
+Release notes are available from the [relnotes.html](relnotes.html).
 
 * * *
 
