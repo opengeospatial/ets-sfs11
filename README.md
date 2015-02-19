@@ -5,7 +5,7 @@ The OGC Simple Feature Access - SQL 1.1 Test-Suite provides the Executable Test 
   * [OGC-99-049] [OpenGIS Simple Features Specification For SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=829)
   * [OGC-98-046r2] [Conformance Test Guidelines for OpenGIS Simple Features Specification for SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=7587)
 
-Detailed information about this test suite is available [here]( http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-sfs11/blob/master/src/main/web/index.html).
+Detailed information about this test suite is available [here](http://opengeospatial.github.io/ets-sfs11).
 
 ## License
 
@@ -13,27 +13,14 @@ Detailed information about this test suite is available [here]( http://htmlprevi
 
 ## Building
 
-This test is build using [Apache Maven](http://maven.apache.org/). To 
-build the test suite run maven from the root directory:
+This test is build using [Apache Maven](http://maven.apache.org/). To build the test suite run maven from the root directory:
 
 ```
 mvn install
 ```
+
+Follow the [TEAM ENGINE instructions](http://opengeospatial.github.io/teamengine/installation.html) to install and run the tests in TEAM ENGINE.
      
-## Testing an Implementation
-
-For UNIX/OS Users
-
-Clone this repository:
-```     
-git clone https://github.com/opengeospatial/ets-sfs11.git
-```
-Run:
-```   
-build.sh**
-```
-
-For Windows users and to get more information about running tests in TEAM Engine, check the instructions at the [CITE wiki](http://cite.opengeospatial.org/easytesting)
 
 ## Bugs
 
