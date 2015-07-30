@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-sfs11</artifactId>
   <groupId>org.opengis.cite</groupId>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.6</version>
 
   <name>OGC Simple Feature Access - SQL 1.1 Test-Suite - Executable Test Suite</name>
   <description>
