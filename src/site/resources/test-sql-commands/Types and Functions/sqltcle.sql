@@ -15,7 +15,3 @@ DROP TABLE buildings;
 DROP TABLE ponds;
 DROP TABLE named_places;
 DROP TABLE map_neatlines;
-DROP TABLE route_segments;
-DROP TABLE routes;
-DROP TABLE map_components;
-DROP TABLE maps;
