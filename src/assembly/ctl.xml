@@ -15,13 +15,6 @@
       <directory>${project.basedir}/src/main/scripts/ctl</directory>
       <outputDirectory>ctl</outputDirectory>
     </fileSet>
-    <fileSet>
-      <directory>${project.basedir}/src/main/resources</directory>
-      <outputDirectory>resources</outputDirectory>
-      <excludes>
-        <exclude>data/</exclude>
-      </excludes>
-    </fileSet>
   </fileSets>
   <files>
     <file>

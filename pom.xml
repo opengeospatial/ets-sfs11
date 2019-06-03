@@ -58,7 +58,6 @@
 
   <build>
     <plugins>
-
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.0.2</version>
@@ -78,20 +77,34 @@
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assembly/test-resources.xml</descriptor>
-          </descriptors>
-          <finalName>SFSQL_1-1_Compliance_Test_Suite_Test_Resources</finalName>
-          <appendAssemblyId>false</appendAssemblyId>
-          <outputDirectory>${project.build.directory}/site</outputDirectory>
-        </configuration>
+        <version>3.1.0</version>
         <executions>
           <execution>
+            <id>ctl</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/assembly/ctl.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+          <execution>
+            <id>test-resources</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>single</goal>
             </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/assembly/test-resources.xml</descriptor>
+              </descriptors>
+              <finalName>SFSQL_1-1_Compliance_Test_Suite_Test_Resources</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+              <outputDirectory>${project.build.directory}/site</outputDirectory>
+            </configuration>
           </execution>
         </executions>
       </plugin>

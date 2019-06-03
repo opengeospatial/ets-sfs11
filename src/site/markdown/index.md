@@ -19,8 +19,8 @@ Implementers may select either form of test suite for adaptation and testing.
 The documents listed below stipulate requirements that must be satisfied by a
 conforming implementation.
 
-  * OGC-99-049 [OpenGIS Simple Features Specification For SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=829)
-  * OGC-98-046r2 [Conformance Test Guidelines for OpenGIS Simple Features Specification for SQL, Revision 1.1](http://portal.opengeospatial.org/files/?artifact_id=7587)
+  * OpenGIS Simple Features Specification For SQL, Revision 1.1 - [OGC-99-049](http://portal.opengeospatial.org/files/?artifact_id=829)
+  * Conformance Test Guidelines for OpenGIS Simple Features Specification for SQL, Revision 1.1 - [OGC-98-046r2](http://portal.opengeospatial.org/files/?artifact_id=7587)
 
 ## Release Notes
 Release notes are available from the [relnotes.html](relnotes.html).
