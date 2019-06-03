@@ -211,7 +211,7 @@ WHERE name = 'Blue Lake';
 --================================
 --
 SELECT GeometryType(centerlines) 
-FROM lakes 
+FROM divided_routes 
 WHERE name = 'Route 75';
 --
 --================================
@@ -301,7 +301,7 @@ WHERE name = 'Blue Lake';
 --
 --================================
 --
-SELECT AsText(Boundary((boundary)) 
+SELECT AsText(Boundary(boundary)) 
 FROM named_places 
 WHERE name = 'Goose Island';
 --
@@ -314,7 +314,7 @@ WHERE name = 'Goose Island';
 --
 --================================
 --
-SELECT AsText(Envelope((boundary)) 
+SELECT AsText(Envelope(boundary)) 
 FROM named_places 
 WHERE name = 'Goose Island';
 --
@@ -337,7 +337,7 @@ WHERE name = 'Goose Island';
 --
 SELECT X(position) 
 FROM bridges 
-WHERE name = 'Bridges';
+WHERE name = 'Cam Bridge';
 --
 --================================
 -- Conformance Item T16	
@@ -350,7 +350,7 @@ WHERE name = 'Bridges';
 --
 SELECT Y(position) 
 FROM bridges 
-WHERE name = 'Bridges';
+WHERE name = 'Cam Bridge';
 --
 --
 --
@@ -597,7 +597,7 @@ WHERE name = 'Route 75';
 --
 --================================
 --
-SELECT GeometryN(centerlines, 2)
+SELECT AsText(GeometryN(centerlines, 2))
 FROM divided_routes 
 WHERE name = 'Route 75';
 --
@@ -751,7 +751,7 @@ WHERE divided_routes.name = 'Route 75' AND named_places.name = 'Ashton';
 --
 --================================
 --
-SELECT Touch(centerline, shore)
+SELECT Touches(centerline, shore)
 FROM streams, lakes 
 WHERE streams.name = 'Cam Stream' AND lakes.name = 'Blue Lake';
 --
@@ -769,7 +769,7 @@ WHERE streams.name = 'Cam Stream' AND lakes.name = 'Blue Lake';
 --
 --================================
 --
-SELECT Within(boundary, footprint)
+SELECT Within(footprint, boundary)
 FROM named_places, buildings 
 WHERE named_places.name = 'Ashton' AND buildings.address = '215 Main Street';
 --
@@ -787,7 +787,7 @@ WHERE named_places.name = 'Ashton' AND buildings.address = '215 Main Street';
 --
 --================================
 --
-SELECT Overlap(forest.boundary, named_places.boundary)
+SELECT Overlaps(forests.boundary, named_places.boundary)
 FROM forests, named_places 
 WHERE forests.name = 'Green Forest' AND named_places.name = 'Ashton';
 --
@@ -805,9 +805,9 @@ WHERE forests.name = 'Green Forest' AND named_places.name = 'Ashton';
 --
 --================================
 --
-SELECT Cross(road_segment.centerline, divided_routes.centerlines)
-FROM road_segment, divided_routes 
-WHERE road_segment.fid = 102 AND divided_routes.name = 'Route 75';
+SELECT Crosses(road_segments.centerline, divided_routes.centerlines)
+FROM road_segments, divided_routes 
+WHERE road_segments.fid = 102 AND divided_routes.name = 'Route 75';
 --
 --================================
 -- Conformance Item T43	
@@ -823,9 +823,9 @@ WHERE road_segment.fid = 102 AND divided_routes.name = 'Route 75';
 --
 --================================
 --
-SELECT Intersects(road_segment.centerline, divided_routes.centerlines)
-FROM road_segment, divided_routes 
-WHERE road_segment.fid = 102 AND divided_routes.name = 'Route 75';
+SELECT Intersects(road_segments.centerline, divided_routes.centerlines)
+FROM road_segments, divided_routes 
+WHERE road_segments.fid = 102 AND divided_routes.name = 'Route 75';
 --
 --================================
 -- Conformance Item T44	
@@ -841,7 +841,7 @@ WHERE road_segment.fid = 102 AND divided_routes.name = 'Route 75';
 --
 --================================
 --
-SELECT Contains(forest.boundary, named_places.boundary)
+SELECT Contains(forests.boundary, named_places.boundary)
 FROM forests, named_places 
 WHERE forests.name = 'Green Forest' AND named_places.name = 'Ashton';
 --
@@ -859,7 +859,7 @@ WHERE forests.name = 'Green Forest' AND named_places.name = 'Ashton';
 --
 --================================
 --
-SELECT Relate(forest.boundary, named_places.boundary, 'TTTTTTTTT')
+SELECT Relate(forests.boundary, named_places.boundary, 'TTTTTTTTT')
 FROM forests, named_places 
 WHERE forests.name = 'Green Forest' AND named_places.name = 'Ashton';
 --
@@ -902,7 +902,7 @@ WHERE bridges.name = 'Cam Bridge' AND named_places.name = 'Ashton';
 --
 --================================
 --
-SELECT Intersection(centerline, shore)
+SELECT AsText(Intersection(centerline, shore))
 FROM streams, lakes 
 WHERE streams.name = 'Cam Stream' AND lakes.name = 'Blue Lake';
 --
@@ -917,7 +917,7 @@ WHERE streams.name = 'Cam Stream' AND lakes.name = 'Blue Lake';
 --
 --================================
 --
-SELECT Difference(named_places.boundary, forests.boundary)
+SELECT AsText(Difference(named_places.boundary, forests.boundary))
 FROM named_places, forests 
 WHERE named_places.name = 'Ashton' AND forests.name = 'Green Forest';
 --
@@ -931,9 +931,9 @@ WHERE named_places.name = 'Ashton' AND forests.name = 'Green Forest';
 --
 --================================
 --
-SELECT Union(shore, boundary)
+SELECT AsText(Union(shore, boundary))
 FROM lakes, named_places 
-WHERE lakes.name = 'Blue Lake' AND named_places.name = Ashton';
+WHERE lakes.name = 'Blue Lake' AND named_places.name = 'Goose Island';
 --
 --================================
 -- Conformance Item T50	
@@ -946,9 +946,9 @@ WHERE lakes.name = 'Blue Lake' AND named_places.name = Ashton';
 --
 --================================
 --
-SELECT SymmetricDifference(shore, boundary)
+SELECT AsText(SymmetricDifference(shore, boundary))
 FROM lakes, named_places 
-WHERE lakes.name = 'Blue Lake' OR named_places.name = 'Ashton';
+WHERE lakes.name = 'Blue Lake' OR named_places.name = 'Goose Island';
 --
 --================================
 -- Conformance Item T51	
@@ -984,7 +984,7 @@ WHERE Contains(Buffer(bridges.position, 15.0), buildings.footprint) = 1;
 --
 --================================
 --
-SELECT ConvexHull(shore)
+SELECT AsText(ConvexHull(shore))
 FROM lakes
 WHERE lakes.name = 'Blue Lake';
 --
