@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-sfs11</artifactId>
   <groupId>org.opengis.cite</groupId>
@@ -8,7 +8,7 @@
 
   <name>OGC Simple Feature Access - SQL 1.1 Test-Suite - Executable Test Suite</name>
   <description>
-  Verifies conformance of implementations to OGC Simple Feature Access - SQL 1.1 Test-Suite.
+    Verifies conformance of implementations to OGC Simple Feature Access - SQL 1.1 Test-Suite.
   </description>
   <url>https://github.com/opengeospatial/ets-sfs11</url>
   <licenses>
@@ -23,7 +23,9 @@
     <url>http://www.opengeospatial.org</url>
   </organization>
   <scm>
-    <url>https://github.com/opengeospatial/ets-sfs11</url>    <connection>scm:git:https://github.com/opengeospatial/ets-sfs11.git</connection>    <developerConnection>scm:git:git@github.com:opengeospatial/ets-sfs11.git</developerConnection>
+    <url>https://github.com/opengeospatial/ets-sfs11</url>
+    <connection>scm:git:https://github.com/opengeospatial/ets-sfs11.git</connection>
+    <developerConnection>scm:git:git@github.com:opengeospatial/ets-sfs11.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
@@ -35,13 +37,13 @@
     <spec-version>1.1</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <teamengine.version>4.0.5</teamengine.version>
-  </properties>  
+  </properties>
   <reporting>
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>2.7</version>
-         <reportSets>
+        <reportSets>
           <reportSet>
             <reports>
               <report>license</report>
@@ -50,14 +52,14 @@
             </reports>
           </reportSet>
         </reportSets>
-      </plugin>  
+      </plugin>
     </plugins>
-  </reporting> 
-  
- <build>
-    <plugins>  
-    
-    <plugin>
+  </reporting>
+
+  <build>
+    <plugins>
+
+      <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
@@ -65,8 +67,8 @@
             <phase>never</phase>
           </execution>
         </executions>
-    </plugin>
-    <plugin>
+      </plugin>
+      <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skipTests>true</skipTests>
@@ -79,7 +81,7 @@
             <descriptor>src/assembly/ctl.xml</descriptor>
           </descriptors>
         </configuration>
-         <executions>
+        <executions>
           <execution>
             <phase>package</phase>
             <goals>
@@ -88,11 +90,11 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>     
-         <artifactId>maven-site-plugin</artifactId>
-         <version>3.4</version>
-         <configuration>
-            <relativizeDecorationLinks>false</relativizeDecorationLinks>      
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <relativizeDecorationLinks>false</relativizeDecorationLinks>
         </configuration>
         <executions>
           <execution>
@@ -107,10 +109,10 @@
           <dependency>
             <groupId>org.apache.maven.doxia</groupId>
             <artifactId>doxia-module-markdown</artifactId>
-            <version>1.7-SNAPSHOT</version>
+            <version>1.6</version>
           </dependency>
         </dependencies>
       </plugin>
-    </plugins>   
+    </plugins>
   </build>
 </project>
