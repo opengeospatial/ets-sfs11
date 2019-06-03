@@ -7,21 +7,21 @@ Test Suites
 
 Normalized Geometry
 --------------------
-sqlncle.sql - SQL for Normalized Geometry (Schema Def and Loading)
+sqlnsch.sql - SQL for Normalized Geometry (Schema Def and Loading)
 sqlnque.sql - SQL for Normalized Geometry (Queries)
-sqlnsch.sql - SQL for Normalized Geometry (Cleanup)
+sqlncle.sql - SQL for Normalized Geometry (Cleanup)
 
 Binary Geometry
 ----------------
-sqlbcle.sql - SQL for Binary Geometry (Schema Def and Loading)
+sqlbsch.sql - SQL for Binary Geometry (Schema Def and Loading)
 sqlbque.sql - SQL for Binary Geometry (Queries)
-sqlbsch.sql - SQL for Binary Geometry (Cleanup)
+sqlbcle.sql - SQL for Binary Geometry (Cleanup)
 
 Types and Functions
 --------------------
-sqltcle.sql - SQL for Types and Functions (Schema Def and Loading)
+sqltsch.sql - SQL for Types and Functions (Schema Def and Loading)
 sqltque.sql - SQL for Types and Functions (Queries)
-sqltsch.sql - SQL for Types and Functions (Cleanup)
+sqltcle.sql - SQL for Types and Functions (Cleanup)
 
 
 
