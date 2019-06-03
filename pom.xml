@@ -61,6 +61,7 @@
 
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
         <executions>
           <execution>
             <id>default-jar</id>
@@ -70,6 +71,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
         <configuration>
           <skipTests>true</skipTests>
         </configuration>
@@ -78,12 +80,15 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
           <descriptors>
-            <descriptor>src/assembly/ctl.xml</descriptor>
+            <descriptor>src/assembly/test-resources.xml</descriptor>
           </descriptors>
+          <finalName>SFSQL_1-1_Compliance_Test_Suite_Test_Resources</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+          <outputDirectory>${project.build.directory}/site</outputDirectory>
         </configuration>
         <executions>
           <execution>
-            <phase>package</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>single</goal>
             </goals>
