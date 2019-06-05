@@ -37,6 +37,7 @@
     <spec-version>1.1</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <teamengine.version>4.0.5</teamengine.version>
+    <docker.teamengine.version>5.4</docker.teamengine.version>
   </properties>
   <reporting>
     <plugins>
@@ -58,9 +59,9 @@
 
   <build>
     <plugins>
-
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
         <executions>
           <execution>
             <id>default-jar</id>
@@ -70,23 +71,41 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
         <configuration>
           <skipTests>true</skipTests>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assembly/ctl.xml</descriptor>
-          </descriptors>
-        </configuration>
+        <version>3.1.0</version>
         <executions>
           <execution>
+            <id>ctl</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/assembly/ctl.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+          <execution>
+            <id>test-resources</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/assembly/test-resources.xml</descriptor>
+              </descriptors>
+              <finalName>SFSQL_1-1_Compliance_Test_Suite_Test_Resources</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+              <outputDirectory>${project.build.directory}/site</outputDirectory>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -114,5 +133,120 @@
         </dependencies>
       </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>io.fabric8</groupId>
+          <artifactId>docker-maven-plugin</artifactId>
+          <version>0.28.0</version>
+          <configuration>
+            <images>
+              <image>
+                <name>ogccite/${project.artifactId}</name>
+                <build>
+                  <dockerFileDir>${project.basedir}/src/docker</dockerFileDir>
+                  <tags>
+                    <tag>${project.version}-teamengine-${docker.teamengine.version}</tag>
+                  </tags>
+                  <assembly>
+                    <inline>
+                      <fileSets>
+                        <fileSet>
+                          <directory>${project.build.directory}</directory>
+                          <outputDirectory>.</outputDirectory>
+                          <includes>
+                            <include>dependency/*teamengine-*.war</include>
+                            <include>dependency/*teamengine-*.zip</include>
+                            <include>*ets-*.zip</include>
+                          </includes>
+                        </fileSet>
+                      </fileSets>
+                    </inline>
+                  </assembly>
+                </build>
+                <run>
+                  <ports>
+                    <port>8081:8080</port>
+                  </ports>
+                  <wait>
+                    <http>
+                      <url>http://localhost:8081/teamengine</url>
+                    </http>
+                    <time>120000</time>
+                  </wait>
+                </run>
+              </image>
+            </images>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.0.0</version>
+          <configuration>
+            <artifactItems>
+              <artifactItem>
+                <groupId>org.opengis.cite.teamengine</groupId>
+                <artifactId>teamengine-web</artifactId>
+                <version>${docker.teamengine.version}</version>
+                <type>war</type>
+              </artifactItem>
+              <artifactItem>
+                <groupId>org.opengis.cite.teamengine</groupId>
+                <artifactId>teamengine-web</artifactId>
+                <version>${docker.teamengine.version}</version>
+                <classifier>common-libs</classifier>
+                <type>zip</type>
+              </artifactItem>
+              <artifactItem>
+                <groupId>org.opengis.cite.teamengine</groupId>
+                <artifactId>teamengine-console</artifactId>
+                <version>${docker.teamengine.version}</version>
+                <classifier>base</classifier>
+                <type>zip</type>
+              </artifactItem>
+            </artifactItems>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
+
+  <profiles>
+    <profile>
+      <id>docker</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>build</id>
+                <goals>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>push</id>
+                <goals>
+                  <goal>push</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>copy</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>

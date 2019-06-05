@@ -3,23 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 
 	                    http://maven.apache.org/xsd/assembly-1.1.2.xsd">
-  <id>ctl</id>
+  <id>test-resources</id>
   <formats>
     <format>zip</format>
   </formats>
-  <includeBaseDirectory>true</includeBaseDirectory>
-  <baseDirectory>${ets-code}/${spec-version}</baseDirectory>
-  <includeSiteDirectory>true</includeSiteDirectory>
+  <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>${project.basedir}/src/main/scripts/ctl</directory>
-      <outputDirectory>ctl</outputDirectory>
+      <directory>${project.basedir}/src/main/resources/SFSQL_1-1_Compliance_Test_Suite_Test_Resources</directory>
+      <outputDirectory>SFSQL_1-1_Compliance_Test_Suite_Test_Resources</outputDirectory>
     </fileSet>
   </fileSets>
-  <files>
-    <file>
-      <source>${project.basedir}/src/main/config/config.xml</source>
-      <filtered>true</filtered>
-    </file>
-  </files>
 </assembly>
