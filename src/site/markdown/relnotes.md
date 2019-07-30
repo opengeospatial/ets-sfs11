@@ -1,5 +1,11 @@
 # Release Notes SFS 1.1 Conformance Test Suite
 
+## 1.7 (2019-07-30)
+
+- [#3](https://github.com/opengeospatial/ets-sfs11/pull/3) - Update queries to be consistent with the expected results
+- [#4](https://github.com/opengeospatial/ets-sfs11/issues/4) - Update documentation regarding test files
+- [#5](https://github.com/opengeospatial/ets-sfs11/issues/5) - Enable Docker support
+
 ## 1.6 (2015-07-30)
 - Update pom.xml to build with Maven 2 and minor edits
 
