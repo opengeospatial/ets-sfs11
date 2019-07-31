@@ -114,6 +114,7 @@
         <version>3.4</version>
         <configuration>
           <relativizeDecorationLinks>false</relativizeDecorationLinks>
+          <skipDeploy>true</skipDeploy>
         </configuration>
         <executions>
           <execution>
