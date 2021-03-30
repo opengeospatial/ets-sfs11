@@ -36,7 +36,7 @@
     <spec-version>1.1</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <teamengine.version>4.0.5</teamengine.version>
-    <docker.teamengine.version>5.4</docker.teamengine.version>
+    <docker.teamengine.version>5.4.1</docker.teamengine.version>
   </properties>
   <reporting>
     <plugins>
