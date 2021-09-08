@@ -1,5 +1,9 @@
 # Release Notes SFS 1.1 Conformance Test Suite
 
+## 1.8 (2021-09-08)
+
+- [#9](https://github.com/opengeospatial/ets-sfs11/issues/9) - Update the header and license text in the scripts
+
 ## 1.7 (2019-07-30)
 
 - [#3](https://github.com/opengeospatial/ets-sfs11/pull/3) - Update queries to be consistent with the expected results
